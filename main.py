@@ -4,11 +4,6 @@
 # Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
 def multiple_of(multiple, num, rules):
     return (multiple % num == 0) and rules.__contains__(str(num))
 
@@ -38,6 +33,7 @@ def fizzbuzz(limit, rules):
             strings = insert_fezz(strings)
         if multiple_of(i, 17, rules):
             strings = list(reversed(strings))
+
         if len(strings) == 0:
             print(i)
         else:
@@ -47,13 +43,9 @@ def fizzbuzz(limit, rules):
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
     print("Welcome to FizzBuzz!\n")
-    limit_input = input("Please enter which number you would like to stop at: ")#
+    limit_input = input("Please enter which number you would like to stop at: ")  #
     if not limit_input.isdigit():
         print("Please enter an integer!")
     else:
         rules_input = input("Please enter the numbers of the rules you want to input (comma seperated): ")
         fizzbuzz(int(limit_input), rules_input.split(','))
-
-
-
-
